@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+    Modified from the Debian original for Ubuntu
+    Last updated: 2022-03-22
+    See: https://launchpad.net/bugs/1966004
+  -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Webserver Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: #2d6cdf;
+      color: white;
+    }
+
+    .card {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to My Web Server</h1>
+    <p>This page was edited using Vim ✅</p>
+  </header>
+
+  <main>
+    <h2>Interactive Demo</h2>
+    <p>Click the button to change the message and show the current time.</p>
+
+    <button class="btn-primary" id="myBtn">Click me</button>
+
+    <div class="card">
+      <p id="status">Status: waiting...</p>
+      <p id="time"></p>
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("myBtn");
+    const status = document.getElementById("status");
+    const time = document.getElementById("time");
+
+    btn.addEventListener("click", () => {
+      status.textContent = "Status: button clicked!";
+      time.textContent = "Current time: " + new Date().toLocaleString();
+    });
+  </script>
+</body>
+</html>
+
